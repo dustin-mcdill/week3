@@ -8,7 +8,7 @@ def banner():
 def get_target():
     target = input("\nEnter target IP address or range: ").strip()
     return target
-
+# Menu for scan type including the extra credit
 def menu():
     print("\nChoose a scan type:")
     print("1. SYN ACK Scan")
@@ -18,6 +18,7 @@ def menu():
     print("5. Top 100 Ports Scan")
     print("6. Vulnerability Script Scan")
 
+#Runs scan based off menu selection
 def run_scan(scanner, target, scan_type):
     try:
         if scan_type == "1":
@@ -42,7 +43,7 @@ def run_scan(scanner, target, scan_type):
             print("[-] Invalid selection.")
             return
 
-        # Display results
+        # Displays results of scan choice
         for host in scanner.all_hosts():
             print(f"\n[+] Host: {host} | State: {scanner[host].state()}")
             for proto in scanner[host].all_protocols():
