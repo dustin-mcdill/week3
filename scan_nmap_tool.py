@@ -1,5 +1,3 @@
-# Based on pages 111–120 in Krishna's Python for Cybersecurity
-
 import nmap
 
 def banner():
